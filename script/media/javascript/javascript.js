@@ -32,8 +32,10 @@ function logo()
 {
     //Image Of the logo is given right here!
     logoObject = new Image();
+    logoObject.onload = function(){
+        canvas.drawImage(logoObject, 410, 30);
+    };
     logoObject.src = './media/image/tosts_logo.png';
-    canvas.drawImage(logoObject, 410, 30);
 }
 
 function titleUnderLogo()
