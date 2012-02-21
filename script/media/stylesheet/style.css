@@ -1,0 +1,70 @@
+@font-face{
+    font-family: 'BBadr';
+    src:url('../font/BBadr.eot?#') format('eot'),
+    url('../font/BBadr.woff') format('woff'),
+    url('../font/BBadr.ttf') format('truetype');
+}
+input
+{
+    font-family: BBadr;
+    width: 300px;
+    height: 20px;
+}
+#poster
+{
+
+    border: solid 1px;
+}
+
+#posterSec
+{
+    width: 616px;
+    height: 500px;
+    float: left;
+    margin: 10px;
+}
+
+#form
+{
+    font-family: BBadr;
+    direction: rtl;
+    width: 566px;
+    height: 490px;
+    float: left;
+    margin: 10px;
+    border: solid 2px gray;
+    padding: 10px 50px 0 0;
+}
+header
+{
+    font: bold 25px BBadr;
+    text-align: center;
+    direction: rtl;
+    border: solid 1px;
+    width: 500px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+section
+{
+    margin-left: 70px;
+}
+
+#posterDownloadLink
+{
+    display: block;
+    margin: 100px 200px 0 0;
+    font-family: BBadr;
+    font-size: 30px;
+    text-decoration: none;
+    color: blue;
+    -webkit-transition: color 2s;
+    /*-moz-transition: color 33s;*/
+    /*-o-transition: color 33s;*/
+
+}
+#posterDownloadLink:hover
+{
+    color: red;
+}

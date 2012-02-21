@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <title>Tosts' Poster Maker</title>
+    <meta lang="fa" charset="utf-8">
+    <script src="media/javascript/javascript.js"></script>
+    <link rel="stylesheet" href="media/stylesheet/style.css" />
+</head>
+<body>
+
+<header>
+    <h2>بسم الله الرحمن الرحیم</h2>
+</header>
+
+<section>
+    <article id="posterSec">
+<canvas width="616" height="500" id="poster">Unfortunately, Your Web Browser Does Not Support Canvas, Though you have to upgrade your browser or use a modern web browser that does support this feature.</canvas>
+    </article>
+
+    <article id="form">
+        <form>
+            <label>قلم :)</label> <select onchange="init();" id="fontType" name='fontType'>
+            <option value="Tahoma">Tahoma</option>
+            <option value="Arial">Arial</option>
+            <option value="serif">serif</option>
+            <option value="sans-serif">sans-serif</option>
+            <option value="cursive">cursive</option>
+            <option value="fantasy">fantasy</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Verdana">Verdana</option>
+            <option value="BBadr">BBadr</option>
+        </select>
+            <br />
+            <label>اندازه قلم</label> <select onchange="init();" id="fontSize" name='fontSize'>
+            <option value="-10">-۱۰</option>
+            <option value="-9">-۹</option>
+            <option value="-8">-۸</option>
+            <option value="-7">-۷</option>
+            <option value="-6">-۶</option>
+            <option value="-5">-۵</option>
+            <option value="-4">-۴</option>
+            <option value="-3">-۳</option>
+            <option value="-2">-۲</option>
+            <option value="-1">-1</option>
+            <option selected value="0">پیش فرض</option>
+            <option value="1">+۱</option>
+            <option value="2">+۲</option>
+            <option value="3">+۳</option>
+            <option value="4">+۴</option>
+            <option value="5">+۵</option>
+            <option value="6">+۶</option>
+            <option value="7">+۷</option>
+            <option value="8">+۸</option>
+            <option value="9">+۹</option>
+            <option value="10">+۱۰</option>
+        </select>
+            <br />
+            <label>متن پایین لوگو</label> <input onblur="init();" name='textBelowLogo' id="textBelowLogo" dir="rtl" value="جلسه ?? باز نرم افزاری تبریز" />
+            <br />
+            <label>عنوان اصلی (سطر ۱)</label> <input onblur="init();" name='mainTitle' id='mainTitle' dir="rtl" value='عنوان رو اینجا وارد کنید'/>
+            <br />
+            <label>عنوان اصلی (سطر ۲)</label> <input onblur="init();" name='mainTitle2' id='mainTitle2' value='عنوان بعدی' />
+            <br />
+            <label>متن پایین کادر مستطیل (سطر 1)</label> <input onblur="init();" name='contentBelowRectangle' id='contentBelowRectangle' dir="rtl" value='در این جلسات یاد می  دهیم و یاد می گیریم، حضور' />
+            <br />
+            <label>متن پایین کادر مستطیل (سطر ۲)</label> <input onblur="init();" name='contentBelowRectangle2' id='contentBelowRectangle2' dir="rtl" value='برای عموم مردم آزاد و رایگان است' />
+            <br />
+            <label>متن پایین کادر مستطیل (سطر ۳)</label> <input disabled onblur="init();" name='contentBelowRectangle3' id='contentBelowRectangle3' dir="rtl" value='' />
+            <br />
+            <label>متن پایین کادر مستطیل (سطر ۴)</label> <input onblur="init();" name='contentBelowRectangle4' id='contentBelowRectangle4' dir="rtl" value='جلسه ؟؟ با ارایه ؟؟؟؟'/>
+            <br />
+            <label>متن پایین کادر مستطیل (سطر ۵)</label> <input onblur="init();" name='contentBelowRectangle5' id='contentBelowRectangle5' dir="rtl" value='جمعه 25 بهمن ماه، ساعت ؟؟ صبح' />
+            <br />
+            <label>متن پایین کادر مستطیل (سطر ۶)</label> <input disabled onblur="init();" name='contentBelowRectangle6' dir="rtl" id='contentBelowRectangle6' value='' />
+            <br />
+            <label>متن پایین کادر مستطیل (سطر ۷)</label> <input onblur="init();" name='contentBelowRectangle7' id='contentBelowRectangle7' dir="rtl" value='میزبان این جلسه شرکت ؟؟' />
+            <br />
+            <label>متن پایین کادر مستطیل (سطر ۸)</label> <input onblur="init();" name='contentBelowRectangle8' id='contentBelowRectangle8' dir="rtl" value='واقع در ؟؟؟؟' />
+            <br />
+            <label>متن پایین کادر مستطیل (سطر ۹)</label> <input onblur="init();" name='contentBelowRectangle9' id='contentBelowRectangle9' dir="rtl" value='ساختمان ؟؟، طبقه ؟؟   تلفن ؟؟؟؟؟؟؟' />
+        </form>
+        <a id="posterDownloadLink" alt='دانلود پوستر' >دانلود پوستر</a>
+
+    </article>
+
+
+</section>
+</body>
+</html>
