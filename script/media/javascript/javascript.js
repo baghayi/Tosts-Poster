@@ -1,8 +1,9 @@
 function init()
 {
-    poster = document.getElementById('poster');
-    defaultFont = document.getElementById('fontType').value;
-    defaultFontSize = window.parseInt(document.getElementById('fontSize').value);
+    var docu = document;
+    var poster = docu.getElementById('poster');
+    var defaultFont = docu.getElementById('fontType').value;
+    var defaultFontSize = window.parseInt(docu.getElementById('fontSize').value);
     canvas = poster.getContext('2d');
     canvas.clearRect(0, 0, 616, 500);
     canvas.fillStyle = '#ffffff'
@@ -10,10 +11,10 @@ function init()
 
     rectangle();
     logo();
-    titleUnderLogo();
-    mainTitleContent();
-    contentBelowRectangle();
-    saveAsImage();
+    titleUnderLogo(docu, defaultFont, defaultFontSize);
+    mainTitleContent(docu, defaultFont, defaultFontSize);
+    contentBelowRectangle(docu, defaultFont, defaultFontSize);
+    saveAsImage(poster, docu);
 }
 function rectangle()
 {
@@ -30,18 +31,15 @@ function rectangle()
 
 function logo()
 {
-    //Image Of the logo is given right here!
-    logoObject = new Image();
-    logoObject.onload = function(){
-        canvas.drawImage(logoObject, 410, 30);
-    };
+    var logoObject = new Image();
     logoObject.src = './media/image/tosts_logo.png';
+    canvas.drawImage(logoObject, 410, 30);
 }
 
-function titleUnderLogo()
+function titleUnderLogo(docu, defaultFont, defaultFontSize)
 {
 //    canvas.save();
-    var textBelowLogo = document.getElementById('textBelowLogo').value;
+    var textBelowLogo = docu.getElementById('textBelowLogo').value;
     canvas.textAlign = 'center';
     canvas.fillStyle = '#330099';
     var newFontSize = parseInt(14 + defaultFontSize);
@@ -50,11 +48,11 @@ function titleUnderLogo()
 //    canvas.restore();
 }
 
-function mainTitleContent()
+function mainTitleContent(docu, defaultFont, defaultFontSize)
 {
     canvas.save();
-    var titleText = document.getElementById('mainTitle').value;
-    var titleText2 = document.getElementById('mainTitle2').value;
+    var titleText = docu.getElementById('mainTitle').value;
+    var titleText2 = docu.getElementById('mainTitle2').value;
 
     canvas.shadowColor = '#ffffff';
     canvas.shadowOffsetX = 2;
@@ -70,9 +68,8 @@ function mainTitleContent()
     canvas.restore();
 }
 
-function contentBelowRectangle()
+function contentBelowRectangle(docu, defaultFont, defaultFontSize)
 {
-    var docu = document;
     var contentBelowRectangle = docu.getElementById('contentBelowRectangle').value,
         contentBelowRectangle2 = docu.getElementById('contentBelowRectangle2').value,
         contentBelowRectangle3 = docu.getElementById('contentBelowRectangle3').value,
@@ -106,9 +103,9 @@ function contentBelowRectangle()
 //    canvas.restore();
 }
 
-function saveAsImage()
+function saveAsImage(p, docu)
 {
-    document.getElementById('posterDownloadLink').href = poster.toDataURL();
+    docu.getElementById('posterDownloadLink').href = p.toDataURL();
 }
 
 window.addEventListener('load', init, false);
