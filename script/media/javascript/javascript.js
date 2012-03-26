@@ -1,3 +1,7 @@
+var logoImageObject = loadLogo();
+
+window.addEventListener('load', init, false);
+
 function init()
 {
     var docu = document;
@@ -10,7 +14,7 @@ function init()
     canvas.fillRect(0, 0, 616, 500);
 
     rectangle();
-    logo();
+    logo(logoImageObject);
     titleUnderLogo(docu, defaultFont, defaultFontSize);
     mainTitleContent(docu, defaultFont, defaultFontSize);
     contentBelowRectangle(docu, defaultFont, defaultFontSize);
@@ -28,11 +32,16 @@ function rectangle()
     canvas.fillRect(30, 30, 365, 155);
     canvas.restore();
 }
-
-function logo()
+function loadLogo()
 {
     var logoObject = new Image();
     logoObject.src = './media/image/tosts_logo.png';
+    return logoObject;
+}
+
+function logo(logoObject)
+{
+
     canvas.drawImage(logoObject, 410, 30);
 }
 
@@ -107,5 +116,3 @@ function saveAsImage(p, docu)
 {
     docu.getElementById('posterDownloadLink').href = p.toDataURL();
 }
-
-window.addEventListener('load', init, false);
